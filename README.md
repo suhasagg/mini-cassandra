@@ -462,23 +462,6 @@ This repo is designed for learning and interview explanation. It intentionally a
 
 ---
 
-## 14. Interview explanation
-
-A strong interview explanation:
-
-```text
-I implemented a simplified Cassandra-like database using an LSM-tree storage model.
-Each write first goes to a WAL for durability, then to a memtable for low-latency writes.
-When the memtable crosses a threshold, it is flushed into immutable SSTables.
-Reads check the memtable first, then SSTables using bloom filters and sparse indexes.
-A consistent hash ring maps partition keys to replica nodes.
-Writes and reads use configurable quorum semantics.
-If a node is down, the coordinator stores hints and replays them when the node is up.
-During reads, the coordinator picks the latest timestamp and performs read repair on stale replicas.
-```
-
----
-
 ## 15. Clean generated data
 
 ```bash
