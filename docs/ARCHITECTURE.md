@@ -1,6 +1,6 @@
 # Mini Cassandra Java - Detailed Architecture
 
-This document explains the architecture of the dependency-free Java Cassandra-like database in interview-ready detail.
+This document explains the architecture of the dependency-free Java Cassandra-like database.
 
 ---
 
