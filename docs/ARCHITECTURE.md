@@ -535,8 +535,4 @@ This implementation is intentionally small. A production Cassandra-like system w
 
 ---
 
-## 7. Good interview summary
 
-```text
-I built a mini Cassandra-like database in Java. The API layer receives HTTP requests and a coordinator maps partition keys to replicas using a consistent hash ring with virtual nodes. Writes use quorum replication: each write is sent to RF replicas and succeeds only after the configured write quorum acknowledges. Each node stores data in an LSM engine: the write is appended to a WAL, applied to a memtable, and later flushed to immutable SSTables with indexes and bloom filters. Reads query a quorum of replicas, choose the newest timestamp, and perform read repair. Deletes are represented with tombstones. If a node is down, the coordinator keeps an in-memory hint and replays it when the node comes back.
-```
