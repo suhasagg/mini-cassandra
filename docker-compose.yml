@@ -1,0 +1,19 @@
+services:
+  mini-cassandra:
+    build: .
+    container_name: mini-cassandra-java
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      DATA_DIR: "/app/data"
+      NODES: "3"
+      REPLICATION_FACTOR: "3"
+      READ_QUORUM: "2"
+      WRITE_QUORUM: "2"
+      MEMTABLE_MAX_ENTRIES: "1000"
+    volumes:
+      - mini_cassandra_data:/app/data
+
+volumes:
+  mini_cassandra_data:
